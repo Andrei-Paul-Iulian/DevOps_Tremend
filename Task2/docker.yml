@@ -1,0 +1,30 @@
+name: Docker Build and Push
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Build Docker image
+        run: docker build -t my-java-app .
+
+      - name: Tag Docker image
+        run: docker tag my-java-app my-docker-registry/my-java-app:${GITHUB_SHA} && docker tag my-java-app my-docker-registry/my-java-app:latest
+
+      - name: Push Docker image to registry
+        run: |
+          docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+          docker push my-docker-registry/my-java-app:${GITHUB_SHA}
+          docker push my-docker-registry/my-java-app:latest
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
