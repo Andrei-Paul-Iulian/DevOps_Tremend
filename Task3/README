@@ -1,1 +1,24 @@
+1.Create a MySQL container and database
+docker run --name mysql-container -e MYSQL_ROOT_PASSWORD=password -d mysql:latest
+docker exec -it mysql-container bash
+mysql -u root -p
 
+CREATE DATABASE company;
+
+2.Import the company.sql file into the database
+docker cp company.sql mysql-container:/company.sql
+
+USE company;
+source /company.sql;
+
+3.Create a user and assign permissions
+CREATE USER 'new_user'@'%' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON company.* TO 'new_user'@'%';
+FLUSH PRIVILEGES;
+
+4.Find the average salary for each department
+
+SELECT d.department_name, AVG(e.salary) AS average_salary
+FROM employees e
+JOIN departments d ON e.department = d.department_id
+GROUP BY d.department_name;
