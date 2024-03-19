@@ -24,10 +24,10 @@ Task 1
 /nonexistent   
 /run/systemd   
 /home/syslog   
-/nonexistent   
-/run/uuidd     
-/nonexistent   
-/home/paul     
+/nonexistent
+/run/uuidd
+/nonexistent
+/home/paul
 
 Task 2
 
