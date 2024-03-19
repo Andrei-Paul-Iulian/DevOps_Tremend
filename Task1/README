@@ -1,1 +1,90 @@
-![Imagine Task1](Task1/task11.png)
+Output:
+Task 1
+
+/root
+/usr/sbin      
+/bin
+/dev
+/bin
+/usr/games     
+/var/cache/man 
+/var/spool/lpd 
+/var/mail      
+/var/spool/news
+/var/spool/uucp
+/bin
+/var/www       
+/var/backups   
+/var/list      
+/run/ircd      
+/var/lib/gnats 
+/nonexistent   
+/run/systemd   
+/run/systemd   
+/nonexistent   
+/run/systemd   
+/home/syslog   
+/nonexistent   
+/run/uuidd     
+/nonexistent   
+/home/paul     
+
+Task 2
+
+root
+daemon
+bin
+sys
+sync
+games
+man
+lp
+mail
+news
+uucp
+proxy
+www-data
+backup
+list
+irc
+gnats
+nobody
+systemd-network
+systemd-resolve
+messagebus
+systemd-timesync
+syslog
+_apt
+uuidd
+tcpdump
+paul
+
+Task 3
+
+27
+
+Task 4
+
+Enter username: paul
+/home/paul
+
+Task 5
+
+paul
+
+Task 6
+
+root
+paul
+
+Task 7
+
+
+Task 8
+
+127.0.0.1
+172.27.228.123
+
+Task 9
+
+82.78.48.175
